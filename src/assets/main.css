@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Font ─────────────────────────────── */
+body {
+  font-family: 'Sarabun', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+  overscroll-behavior-y: none;
+}
+
+/* ─── Safe Area ─────────────────────────── */
+.main-content {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+  min-height: 100dvh;
+}
+
+/* ─── PrimeVue Input Override ───────────── */
+.p-inputtext,
+.p-inputnumber-input {
+  @apply rounded-xl border-gray-200 text-gray-800 text-sm;
+  font-family: 'Sarabun', sans-serif !important;
+}
+
+.p-button {
+  @apply rounded-xl font-semibold;
+  font-family: 'Sarabun', sans-serif !important;
+}
+
+.p-button-lg {
+  @apply rounded-2xl py-3 text-base;
+}
+
+.p-select,
+.p-datepicker {
+  @apply rounded-xl border-gray-200;
+}
+
+/* ─── PrimeVue Toast ─────────────────────── */
+.p-toast {
+  font-family: 'Sarabun', sans-serif !important;
+}
+
+/* ─── Card hover ─────────────────────────── */
+.card-hover {
+  @apply transition-transform active:scale-95 cursor-pointer;
+}
+
+/* ─── Mobile Tap Highlight ───────────────── */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ─── Smooth scrolling ───────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── Custom scrollbar ───────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+/* ─── Dark Mode ─────────────────────────── */
+html.dark body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+html.dark .bg-white {
+  background-color: #1e293b !important;
+}
+html.dark .bg-gray-50 {
+  background-color: #0f172a !important;
+}
+html.dark .bg-gray-100 {
+  background-color: #334155 !important;
+}
+html.dark .bg-blue-50 {
+  background-color: #1e3a5f !important;
+}
+html.dark .bg-orange-50 {
+  background-color: #3a2410 !important;
+}
+html.dark .bg-orange-100,
+html.dark .bg-blue-100,
+html.dark .bg-green-100,
+html.dark .bg-red-100,
+html.dark .bg-purple-100,
+html.dark .bg-teal-100,
+html.dark .bg-yellow-100 {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+html.dark .text-gray-800,
+html.dark .text-gray-700 {
+  color: #e2e8f0 !important;
+}
+html.dark .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+html.dark .text-gray-500 {
+  color: #94a3b8 !important;
+}
+html.dark .text-gray-400 {
+  color: #64748b !important;
+}
+html.dark .border-gray-100,
+html.dark .border-gray-200,
+html.dark .border-gray-50 {
+  border-color: #334155 !important;
+}
+html.dark .border-blue-100,
+html.dark .border-blue-200,
+html.dark .border-orange-100 {
+  border-color: #1e3a5f !important;
+}
+html.dark .shadow-sm,
+html.dark .shadow-md,
+html.dark .shadow-lg,
+html.dark .shadow-2xl {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
+/* PrimeVue dark overrides */
+html.dark .p-inputtext,
+html.dark .p-inputnumber-input,
+html.dark .p-select,
+html.dark .p-datepicker-input,
+html.dark .p-textarea {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+}
+html.dark .p-inputtext::placeholder,
+html.dark .p-textarea::placeholder {
+  color: #64748b !important;
+}
+html.dark .p-dialog,
+html.dark .p-dialog-header,
+html.dark .p-dialog-content {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+}
+html.dark .p-select-overlay,
+html.dark .p-select-list,
+html.dark .p-datepicker-panel {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+}
+html.dark .p-select-option,
+html.dark .p-datepicker-day {
+  color: #e2e8f0 !important;
+}
+html.dark .p-select-option:hover,
+html.dark .p-datepicker-day:hover {
+  background-color: #334155 !important;
+}
+
+/* Gradient cards (e.g. AI analyzer) */
+html.dark .ai-analyzer {
+  background: linear-gradient(to right, #1e293b, #2a1e3f) !important;
+  border-color: #4c1d95 !important;
+}
+html.dark .ai-analyzer .text-gray-700 {
+  color: #e2e8f0 !important;
+}
+
+/* Bedtime card-section (uses @apply bg-white, so .bg-white selector misses) */
+html.dark .card-section {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+html.dark .card-section.ai-analyzer {
+  background: linear-gradient(to bottom right, #1e293b, #2a1e3f) !important;
+  border-color: #4c1d95 !important;
+}
+html.dark .section-title {
+  color: #e2e8f0 !important;
+}
+
+/* Rest day banner (amber gradient) */
+html.dark .rest-day-banner {
+  background: linear-gradient(to right, #3a2410, #2a1810) !important;
+  border-color: #78350f !important;
+}
+
